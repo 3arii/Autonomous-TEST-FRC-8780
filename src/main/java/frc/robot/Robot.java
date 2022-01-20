@@ -24,11 +24,6 @@ public class Robot extends TimedRobot {
   private final Joystick m_stick = new Joystick(0);
   private final Timer m_timer = new Timer();
 
-  private final DifferentialDrive m_robotDrive =
-      new DifferentialDrive(new PWMVictorSPX(0), new PWMVictorSPX(1));
-  private final Joystick m_stick = new Joystick(0);
-  private final Timer m_timer = new Timer();
-
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -46,8 +41,8 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during autonomous. */
   @Override
   public void autonomousPeriodic() {
-    // Drive for 2 seconds
-    if (m_timer.get() < 2.0) {
+    // Drive for 5 seconds
+    if (m_timer.get() < 5.0) {
       m_robotDrive.arcadeDrive(0.5, 0.0); // drive forwards half speed
     } else {
       m_robotDrive.stopMotor(); // stop robot
